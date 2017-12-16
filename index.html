@@ -2,22 +2,38 @@
 <html>
 <head>
 	<title>GifTastic</title>
+
+  <!-- Reset file -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+
+  <!-- Css file -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+
 </head>
 <body>
-
+  <div class="bg"></div>
   <div class="container">
-    <h1>Gif Search</h1>
+    <h1>GIF SEARCH<br><small> add your usual phrases <br> text your friends </small></h1>
+
+    <form id="gif-form">
+      <label for="gif-input"><input type="text" id="gif-input"></label>
+      
+      <!-- Button triggers new gif to be added -->
+      <input id="add-gif" type="submit" value="Let's GIF">
+    </form>
 
     <!-- Rendered buttons will get dumped Here  -->
     <div id="buttons-view"></div>
-
-    <form id="gif-form">
-      <label for="gif-input">Add a gif</label>
-      <input type="text" id="gif-input"><br>
-
-      <!-- Button triggers new gif to be added -->
-      <input id="add-gif" type="submit" value="Add Gif">
-    </form>
 
     <!-- gifs will get dumped here -->
     <div id="gif-view"></div>

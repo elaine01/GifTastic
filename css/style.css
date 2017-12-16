@@ -1,0 +1,38 @@
+html, body {
+	height: 100%;
+}
+
+.container {
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+h1, #buttons-view  {
+	max-width: 725px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+#gif-form, #gif-view {
+	max-width: 625px;
+	margin: 4% auto;
+	text-align: center;
+}
+
+.gif {
+	padding: 1%;
+	margin: .3%;
+}
+
+img {
+/*	width: 400px;*/
+	border-radius: 7px;
+	max-width: 500px;
+	opacity: .9;
+}
+
+p {
+	font-family: 'Barlow', sans-serif;
+	padding-bottom: 5px;
+}

@@ -12,7 +12,7 @@ var topics = ["tgif", "coffee?", "hey", "good night",
 //    * Try using a loop that appends a button for each string in the array.
 
 function renderButtons() {
-	// $("#buttons-view").empty();
+	$("#buttons-view").empty();
 
 	for (var i = 0; i < topics.length; i++) {
 		var b = $("<button>");
@@ -41,7 +41,6 @@ function displayGif() {
 		}).done(function(response) {
 			// $("#gif-view").html(JSON.stringify(response));
 			var results = response.data; //still		
-			// console.log(queryURL);
 
 			for (var j = 0; j < results.length; j++) {
 				var gifDiv = $("<div class='oneResult'>");
@@ -57,6 +56,7 @@ function displayGif() {
 				gifImage.attr("data-animate", animate);
 				gifImage.attr("data-state", "still");
 
+				console.log("test");
 				// gifDiv.prepend(p);
 				gifDiv.prepend(p);
 				gifDiv.prepend(gifImage);
@@ -65,12 +65,13 @@ function displayGif() {
 		});
 	});
 }
+displayGif();
 
 
 // 4. When the user clicks one of the still GIPHY images,
 // the gif should animate. If the user clicks the gif again, it should stop playing.
 
-$(".item").on("click", function() {
+$(document).on("click", ".item", function() {
 
 	var state = $(this).attr("data-state");
 
@@ -96,13 +97,19 @@ $(".item").on("click", function() {
 // 6. Add a form to your page takes the value from a user input box
 // and adds it into your `topics` array. Then make a function call that takes
 // each topic in the array remakes the buttons on the page.
-$("#add-gif").on("click", function(event) {
+$(document).on("click", "#add-gif", function(event) {
 	event.preventDefault();
+	console.log("hi");
 
-	var gif = $("#gif-input").val().trim();
+	var gif = $("#gif-input").val().trim().toLowerCase();
 
-	if(!topics.includes(gif)) {
+	console.log(gif);
+
+	if (!topics.includes(gif)) {
 		topics.push(gif);
 	};
+	$("#gif-input").empty();
+	renderButtons();
+	displayGif();
 });
 
